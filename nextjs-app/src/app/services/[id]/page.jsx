@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import React from 'react'
+import React from "react";
 
-export default function ServicesPage() {
+export default async function ServiceDetailsPage({ params }) {
 
     const data = [
         {
@@ -30,19 +29,18 @@ export default function ServicesPage() {
             description: "Build high performance mobile and web applications."
         }
     ];
+
+
+    const { id } = await params;
+    const singleService = data.find(service => service.id === id);
+
     return (
-        <div>
-            <p className='text-bold text-2xl'>
-                ServicesPage
-            </p>
-            {data.map(service => (
-                <div key={service.id} className="border p-4 mb-4 rounded-lg">
-                   <Link href={`/services/${service.id}`} className="text-blue-500 text-lg font-semibold">
-                    {service.name}
-                   </Link>
-                    <p className="text-gray-600">{service.description}</p>
-                </div>
-            ))}
+        <div className="p-6">
+            <p className="font-bold text-2xl mb-4">Service Details Page</p>
+            <p className="text-lg">Service ID: {id}</p>
+            <p className="text-lg">Service Name: {singleService.name}</p>
+            <p className="text-gray-600">{singleService.description}</p>
+            
         </div>
-    )
+    );
 }
