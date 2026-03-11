@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+    const pathName =usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
     const Navlinks = (
@@ -14,8 +16,10 @@ export default function Navbar() {
             <Link href="/contact">Contact</Link>
         </>
     )
+    console.log(pathName, pathName.includes("dashboard"));
 
-    return (
+    if (!pathName.includes("dashboard")) {
+ return (
         <nav className=" shadow-md w-full">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
@@ -66,4 +70,12 @@ export default function Navbar() {
             )}
         </nav>
     );
+
+    }
+    else{
+        return <></>;
+    }
+
+
+   
 }
