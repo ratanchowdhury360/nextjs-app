@@ -34,13 +34,26 @@ export default async function ServiceDetailsPage({ params }) {
     const { id } = await params;
     const singleService = data.find(service => service.id === id);
 
-    return (
+    if (singleService) {
+ return (
         <div className="p-6">
             <p className="font-bold text-2xl mb-4">Service Details Page</p>
             <p className="text-lg">Service ID: {id}</p>
             <p className="text-lg">Service Name: {singleService.name}</p>
             <p className="text-gray-600">{singleService.description}</p>
-            
+
         </div>
     );
+    }
+    else {
+        return (
+            <div className="p-6">
+                <p className="font-bold text-2xl mb-4">Service Not Found</p>
+                <p className="text-lg">No service found with ID: {id}</p>
+            </div>
+        );
+    }
+
+
+   
 }
