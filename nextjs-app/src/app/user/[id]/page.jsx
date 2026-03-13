@@ -1,4 +1,4 @@
-import { getSinglePost } from '@/app/posts/[id]/page';
+
 import React from 'react'
 
 export const getSingleUser = async (user_id) => {
