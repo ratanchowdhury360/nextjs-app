@@ -1,6 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 import React from 'react'
 import MealSearchInput from './components/MealSearchInput';
+import Image from 'next/image';
 
 export default async function SearchMealsPart2({searchParams}) {
     const query = await searchParams;
@@ -32,7 +33,7 @@ export default async function SearchMealsPart2({searchParams}) {
                     meals.map(meal => (
                         <div key={meal.idMeal} className='m-4 p-4 border rounded-lg shadow-md '>
                             <h1>{meal.strMeal}</h1>
-                            <img src={meal.strMealThumb} alt={meal.strMeal} className='w-40' />
+                            <Image src={meal.strMealThumb} alt={meal.strMeal} className='w-40' width={160} height={160} />
                             <p>{meal.strInstructions}</p>
                         </div>
                     ))
