@@ -7,6 +7,11 @@ export const getposts = async () => {
   return data;
 };
 
+export const metadata = {
+  title: "All Posts",
+  description: "Trying to learn next js with a simple project",
+};
+
 export default async function Posts() {
   const posts = await getposts();
 
