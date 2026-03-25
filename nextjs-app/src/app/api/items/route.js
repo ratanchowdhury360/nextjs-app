@@ -7,6 +7,7 @@
 //   }
 
 import dbConnect from "@/lib/dbConnect";
+import { revalidatePath } from "next/cache";
 
 
 //   return Response.json({ data })
@@ -30,7 +31,7 @@ export async function POST(req) {
   console.log(postedData);
 
   const result = await dbConnect("items").insertOne(postedData);
-
+ revalidatePath("/products"); // Revalidate the /products page to reflect the new data
   console.log(result);
 
   return Response.json({ result });

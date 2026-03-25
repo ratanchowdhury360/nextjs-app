@@ -15,6 +15,8 @@ export default function Navbar() {
             <Link href="/user">User</Link>
             <Link href="/meals">Meals</Link>
             <Link href="/searchMealsPart2">Meals2</Link>
+            <Link href="/products">Products</Link>
+            <Link href="/products/add">Add Product</Link>
             <Link href="/about">About</Link>
             <Link href="/services">Services</Link>
             <Link href="/contact">Contact</Link>
