@@ -35,10 +35,3 @@ export async function PATCH(req, {params}) {
  console.log(postedData);
   return Response.json({ updatedData })
 }
-
-// nextjsdb
-
-// oLhbBw8v1psaV3vp
-
-// nextjsTest
-//items

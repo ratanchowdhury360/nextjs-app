@@ -17,7 +17,9 @@ export default function ProductAddForm() {
         const productData = { productName, price, description };
 
        
-            const response = await fetch("http://localhost:3000/api/items", {
+            // const response = await fetch("http://localhost:3000/api/items", {
+            // const response = await fetch("https://learning-nextjs-eight-swart.vercel.app/api/items", {
+            const response = await fetch("https://nextjs-app-three-gray.vercel.app/api/items", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
